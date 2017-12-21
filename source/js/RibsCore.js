@@ -14,3 +14,5 @@ class RibsCore {
     return height;
   }
 }
+
+export default (RibsCore);
