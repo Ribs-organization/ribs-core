@@ -29,9 +29,9 @@ class RibsCore {
     element.style.maxHeight = 0;
     element.style.display = 'block';
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.style.maxHeight = `${maxHeight}px`;
-    }, duration)
+    }, duration);
   }
 }
 
