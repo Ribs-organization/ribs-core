@@ -11,7 +11,6 @@
     "url": "git+https://github.com/Piou-piou/RibsCore.git"
   },
   "keywords": [
-    "webpack",
     "js",
     "es6"
   ],
@@ -22,15 +21,7 @@
   },
   "homepage": "https://github.com/Piou-piou/RibsCore#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "uglifyjs-webpack-plugin": "^1.1.0",
-    "webpack": "^3.8.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "webpack-dev-server": "^2.6.1"
   }
 }

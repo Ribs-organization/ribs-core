@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 class RibsCore {
   /**
    * @param element
