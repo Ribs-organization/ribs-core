@@ -2,7 +2,7 @@
   "name": "ribs-core",
   "version": "0.0.1",
   "description": "this package regroup all functions that could be needed in other ribs packages",
-  "main": "index.js",
+  "main": "RibsCore.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
