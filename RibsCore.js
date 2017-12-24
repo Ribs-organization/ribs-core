@@ -39,10 +39,10 @@ class RibsCore {
    * @param newElement
    * add an element arround a specified element. This function is like .wrap() in jQuery
    */
-  static wrap(element, newElement) {
+  static wrap(element, newElement, className = null) {
     const parentElement = element.parentNode;
     const wrapper = document.createElement(newElement);
-    wrapper.className = 'switch';
+    wrapper.className = className;
 
     parentElement.insertBefore(wrapper, element);
     parentElement.removeChild(element);
