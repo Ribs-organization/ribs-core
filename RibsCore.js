@@ -33,6 +33,21 @@ class RibsCore {
       element.style.maxHeight = `${maxHeight}px`;
     }, duration);
   }
+
+  /**
+   * @param element
+   * @param newElement
+   * add an element arround a specified element. This function is like .wrap() in jQuery
+   */
+  wrap(element, newElement) {
+    const parentElement = element.parentNode;
+    const wrapper = document.createElement(newElement);
+    wrapper.className = 'switch';
+
+    parentElement.insertBefore(wrapper, element);
+    parentElement.removeChild(element);
+    wrapper.appendChild(element);
+  }
 }
 
 export default (RibsCore);
