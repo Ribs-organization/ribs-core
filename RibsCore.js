@@ -48,6 +48,39 @@ class RibsCore {
     parentElement.removeChild(element);
     wrapper.appendChild(element);
   }
+
+  /**
+   * @param element
+   * @param wanted
+   * @returns {*}
+   * method to get a wanted parent in parentsNodes of an element
+   */
+  static parents(element, wanted) {
+    for ( ; element && element !== document; element = element.parentNode) {
+      if (this.checkWanted(wanted) === 'class' && element.classList.contains(wanted.split('.')[1])) {
+        return element;
+      } else if (this.checkWanted(wanted) === 'id' && element.id === wanted.split('#')[1]) {
+        return element;
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * @param wanted
+   * @returns {*}
+   * permet de tester si un élément cherché est une class ou un id
+   */
+  static checkWanted(wanted) {
+    if (wanted.indexOf('.') !== -1) {
+      return 'class';
+    } else if (wanted.indexOf('#') !== -1) {
+      return 'id';
+    }
+
+    return null;
+  }
 }
 
 export default (RibsCore);
