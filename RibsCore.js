@@ -5,9 +5,23 @@ class RibsCore {
    * function that return height of an element that is no displayed
    */
   static getHeight(element) {
+    //if max heigh get value and delete if for a moment
+    const maxHeight = window.getComputedStyle(element).getPropertyValue('max-height');
+
+    if (maxHeight !== "none") {
+      element.style.maxHeight = 'inherit';
+    }
+
     element.style.display = 'block';
+
     let height = parseInt(window.getComputedStyle(element).getPropertyValue('height'));
     element.style.display = '';
+
+    console.log(height)
+
+    if (maxHeight !== "none") {
+      element.style.maxHeight = maxHeight;
+    }
 
     return height;
   }

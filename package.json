@@ -1,6 +1,6 @@
 {
   "name": "ribs-core",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "this package regroup all functions that could be needed in other ribs packages",
   "main": "RibsCore.js",
   "scripts": {
