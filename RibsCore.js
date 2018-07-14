@@ -17,8 +17,6 @@ class RibsCore {
     let height = parseInt(window.getComputedStyle(element).getPropertyValue('height'));
     element.style.display = '';
 
-    console.log(height)
-
     if (maxHeight !== "none") {
       element.style.maxHeight = maxHeight;
     }
