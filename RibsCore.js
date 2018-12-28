@@ -32,14 +32,16 @@ class RibsCore {
    */
   static toggleSlide(element, duration) {
     let maxHeight = 0;
+    const maxHeightDiv = window.getComputedStyle(element).getPropertyValue('max-height');
 
-    if (window.getComputedStyle(element).getPropertyValue('max-height') === 'none') {
+    if (maxHeightDiv === 'none' || maxHeightDiv === '0px') {
       maxHeight = this.getHeight(element);
     }
 
     element.style.transition = 'max-height 0.5s ease-in-out';
     element.style.maxHeight = 0;
     element.style.display = 'block';
+    element.style.overflow = 'hidden';
 
     setTimeout(function () {
       element.style.maxHeight = `${maxHeight}px`;
