@@ -38,14 +38,20 @@ class RibsCore {
       maxHeight = this.getHeight(element);
     }
 
-    element.style.transition = 'max-height 0.5s ease-in-out';
+    element.style.transition = `max-height ${duration/1000}s ease-in-out, padding ${duration/1000}s ease-in-out`;
     element.style.maxHeight = 0;
     element.style.display = 'block';
     element.style.overflow = 'hidden';
 
+    if (maxHeight === 0) {
+      element.style.padding = '0px';
+    } else {
+      element.style.removeProperty('padding');
+    }
+
     setTimeout(function () {
       element.style.maxHeight = `${maxHeight}px`;
-    }, duration);
+    }, 10);
   }
 
   /**
