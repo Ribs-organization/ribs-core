@@ -20,8 +20,6 @@
     "url": "https://github.com/Piou-piou/RibsCore/issues"
   },
   "homepage": "https://github.com/Piou-piou/RibsCore#readme",
-  "devDependencies": {
-  },
-  "dependencies": {
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
