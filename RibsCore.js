@@ -1,11 +1,11 @@
 class RibsCore {
   /**
+   * function that return height of an element that is no displayed
    * @param element
    * @returns {Number}
-   * function that return height of an element that is no displayed
    */
   static getHeight(element) {
-    //if max heigh get value and delete if for a moment
+    //if max height get value and delete if for a moment
     const maxHeight = window.getComputedStyle(element).getPropertyValue('max-height');
 
     if (maxHeight !== "none") {
@@ -25,10 +25,10 @@ class RibsCore {
   }
 
   /**
-   * @param element
-   * @param duration
    * this method do animation on height when displaying an element
    * if max height = none it show the element else this function hide it
+   * @param element
+   * @param duration
    */
   static toggleSlide(element, duration) {
     let maxHeight = 0;
@@ -55,9 +55,9 @@ class RibsCore {
   }
 
   /**
+   * add an element arround a specified element. This function is like .wrap() in jQuery
    * @param element
    * @param newElement
-   * add an element arround a specified element. This function is like .wrap() in jQuery
    */
   static wrap(element, newElement, className = null) {
     const parentElement = element.parentNode;
@@ -70,10 +70,10 @@ class RibsCore {
   }
 
   /**
+   * method to get a wanted parent in parentsNodes of an element
    * @param element
    * @param wanted
    * @returns {*}
-   * method to get a wanted parent in parentsNodes of an element
    */
   static parents(element, wanted) {
     for ( ; element && element !== document; element = element.parentNode) {
@@ -88,9 +88,9 @@ class RibsCore {
   }
 
   /**
+   * method to test if a wanter element is a class or an id
    * @param wanted
    * @returns {*}
-   * permet de tester si un élément cherché est une class ou un id
    */
   static checkWanted(wanted) {
     if (wanted.indexOf('.') !== -1) {
