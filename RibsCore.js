@@ -112,6 +112,43 @@ class RibsCore {
 
     return regex.test(mail);
   }
+
+  /**
+   * method to test strength of a given password
+   * @param password
+   * @param strength
+   * @param length
+   * @returns {boolean}
+   */
+  static testPasswordStrength(password, strength = 4, length = 8) {
+    let strengthValue = 0;
+    const strengths = [
+      /(?=.*[a-z])/,
+      /(?=.*[A-Z])/,
+      /(?=.*[0-9])/,
+      /(?=.[!@#$%\^&*])/,
+    ];
+
+    for (const strengthReg of strengths) {
+      if (strengthReg.test(password)) {
+        strengthValue += 100/strengths.length;
+      }
+    }
+
+    this.passwordStrength = strengthValue;
+
+    if (password.length < length) {
+      this.passwordError = `You password must contain at least ${length} caracters`;
+      return false;
+    }
+
+    if (strengthValue >= (strength*(100/strengths.length))) {
+      return true;
+    } else {
+      this.passwordError = `You password is not enough secure`;
+      return false;
+    }
+  }
 }
 
 export default (RibsCore);
