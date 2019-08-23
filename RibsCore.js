@@ -25,6 +25,20 @@ class RibsCore {
   }
 
   /**
+   * function that return width of an element that is not displayed
+   * @param element
+   * @returns {number}
+   */
+  static getWidth(element) {
+    element.style.display = 'block';
+
+    const width = parseInt(window.getComputedStyle(element).getPropertyValue('width'));
+    element.style.display = '';
+
+    return width;
+  }
+
+  /**
    * this method do animation on height when displaying an element
    * if max height = none it show the element else this function hide it
    * @param element
